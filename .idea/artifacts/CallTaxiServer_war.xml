@@ -1,0 +1,15 @@
+<component name="ArtifactManager">
+  <artifact type="war" build-on-make="true" name="CallTaxiServer:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="CallTaxiServer.war">
+      <element id="artifact" artifact-name="CallTaxiServer:war exploded" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Hibernate 4.2.2-4.2.2" />
+          <element id="library" level="project" name="mysql-connector-java-5.1.22-bin" />
+          <element id="library" level="project" name="jackson-annotations-2.6.0-rc4" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

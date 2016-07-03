@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - calltaxi@localhost" uuid="f23a5c5f-16e4-4317-a291-d5fe6a19430d">
+    <database-info product="MySQL" version="5.5.5-10.1.10-MariaDB" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="calltaxi"/>
+    <table name="driver_info" schema="" catalog="calltaxi" type="TABLE">
+      <column name="username" sqlType="CHAR" precision="20" scale="0" nullable="true" jdbcType="1"/>
+      <column name="pwd" sqlType="CHAR" precision="20" scale="0" nullable="false" jdbcType="1"/>
+      <column name="license" sqlType="CHAR" precision="20" scale="0" nullable="false" jdbcType="1"/>
+      <column name="db_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <primary-key name="PRIMARY" columns="db_id"/>
+      <index name="id" unique="true" columns="username"/>
+      <index name="license" unique="true" columns="license"/>
+    </table>
+    <table name="driver_loca" schema="" catalog="calltaxi" type="TABLE">
+      <column name="username" sqlType="CHAR" precision="20" scale="0" nullable="true" jdbcType="1"/>
+      <column name="lati" sqlType="DOUBLE" precision="22" scale="0" nullable="false" jdbcType="8"/>
+      <column name="longi" sqlType="DOUBLE" precision="22" scale="0" nullable="false" jdbcType="8"/>
+      <column name="valid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="db_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <primary-key name="PRIMARY" columns="db_id"/>
+      <index name="id" unique="true" columns="username"/>
+    </table>
+    <table name="log" schema="" catalog="calltaxi" type="TABLE">
+      <column name="user_id" sqlType="CHAR" precision="20" scale="0" nullable="false" jdbcType="1"/>
+      <column name="driver_id" sqlType="CHAR" precision="20" scale="0" nullable="false" jdbcType="1"/>
+      <column name="st_time" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="ed_time" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="status" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="db_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <primary-key name="PRIMARY" columns="db_id"/>
+      <index name="driver_id" unique="true" columns="driver_id"/>
+      <index name="user_id" unique="true" columns="user_id"/>
+    </table>
+    <table name="user_info" schema="" catalog="calltaxi" type="TABLE">
+      <column name="username" sqlType="CHAR" precision="20" scale="0" nullable="false" jdbcType="1"/>
+      <column name="pwd" sqlType="CHAR" precision="20" scale="0" nullable="false" jdbcType="1"/>
+      <column name="type" sqlType="SMALLINT" precision="5" scale="0" nullable="false" jdbcType="5"/>
+      <column name="db_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="phone" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="db_id"/>
+      <index name="id" unique="true" columns="username"/>
+      <index name="id_2" unique="true" columns="db_id"/>
+    </table>
+    <table name="user_loca" schema="" catalog="calltaxi" type="TABLE">
+      <column name="username" sqlType="CHAR" precision="20" scale="0" nullable="false" jdbcType="1"/>
+      <column name="lati" sqlType="DOUBLE" precision="22" scale="0" nullable="false" jdbcType="8"/>
+      <column name="longi" sqlType="DOUBLE" precision="22" scale="0" nullable="false" jdbcType="8"/>
+      <column name="db_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <primary-key name="PRIMARY" columns="db_id"/>
+      <index name="id" unique="true" columns="username"/>
+    </table>
+  </data-source>
+</component>
